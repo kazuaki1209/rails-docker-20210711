@@ -28,14 +28,14 @@ jobs:
     working_directory: ~/rails-docker-20210711/src
     steps:
       - checkout:
-        path: ~/rails-docker-20210711
+          path: ~/rails-docker-20210711
       - ruby/install-deps
       - run:
-        name: Database setup
-        command: bundle exec rails db:migrate
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
-        name: test
-        command: bundle exec rake test
+          name: test
+          command: bundle exec rake test
 
 workflows:
   version: 2
