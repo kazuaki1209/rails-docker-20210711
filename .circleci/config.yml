@@ -31,10 +31,9 @@ jobs:
       - checkout:
           path: ~/rails-docker-20210711
       - ruby/install-deps
-      # - run:
-          # name: Database setup
-          # command: bundle exec rails db:migrate
-          # command: bundle exec rails "127.0.0.1":migrate
+      - run:
+          name: Database setup
+          command: bundle exec rails db:migrate
       - run:
           name: test
           command: bundle exec rake test
